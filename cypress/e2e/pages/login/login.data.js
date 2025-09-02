@@ -6,5 +6,4 @@ export class LoginData {
             password: "abc"
         };
     }
-
 }
