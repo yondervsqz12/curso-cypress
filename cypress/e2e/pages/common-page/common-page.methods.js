@@ -52,5 +52,4 @@ export class CommonPageMethods {
         CommonPageElements.signedUser().should('have.text', `Welcome ${username}`)
     }
 
-
 }

@@ -6,7 +6,7 @@ import { LoginMethods } from "../pages/login/login.methods";
 import { Logger } from "../utilities/logger";
 
 describe(CommonPageData.testSuites.autenticacion, () =>{
-    it('Inicio de sesion Valido', () => {
+    it('Inicio de sesion valido', () => {
 
         Logger.stepNumber(1)
         Logger.step("Navegar a la página de inicio")
@@ -28,4 +28,28 @@ describe(CommonPageData.testSuites.autenticacion, () =>{
         CommonPageMethods.verifySignedUser(LoginData.validCredentials.username)
 
     });
+
+    it('Inicio de sesion invalido', () => {
+        
+        Logger.stepNumber(1)
+        Logger.step("Navegar a la página de inicio")
+        CommonPageMethods.navigateToDemoBlaze()
+
+        Logger.stepNumber(2)
+        Logger.step("Hacer clic en Log In en la barra de navegacion")
+        CommonPageMethods.clickOnLoginOption()
+
+        Logger.stepNumber(3)
+        Logger.step("Ingresar nombre de usuario y contraseña inválidos")
+        LoginMethods.insertUsername(LoginData.validCredentials.username)
+        LoginMethods.insertPassword('contrasenainvalida')
+
+        Logger.stepNumber(4)
+        Logger.step("Hacer clic en el boton Log In para iniciar sesion")
+        LoginMethods.clickLoginButton()
+        Logger.verification('Verificar que se muestre el mensaje de error de inicio de sesion"')
+        LoginMethods.verifyWrongPasswordMessage()
+
+    });
+
 })
