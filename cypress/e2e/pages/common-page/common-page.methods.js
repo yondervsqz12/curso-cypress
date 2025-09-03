@@ -46,7 +46,11 @@ export class CommonPageMethods {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
-}
+    }
+
+    static verifySignedUser(username) {
+        CommonPageElements.signedUser().should('have.text', `Welcome ${username}`)
+    }
 
 
 }
