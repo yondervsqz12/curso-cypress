@@ -1,6 +1,6 @@
 export class SignupElements{
 
-    static textBoxes(username, password) {
+    static textBoxes() {
         return{
             get username(){
                 return cy.get('input#sign-username')

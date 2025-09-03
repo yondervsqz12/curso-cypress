@@ -1,7 +1,10 @@
 import { CommonPageData } from "../pages/common-page/common-page.data"
 import { CommonPageMethods } from "../pages/common-page/common-page.methods"
-import { SignupMethods } from "../pages/signup/signup.methods"
+import { SignupMethods } from "../pages/sign-up/signup.methods"
 import { Logger } from "../utilities/logger"
+
+const user = CommonPageMethods.generateRandomString();
+const password = CommonPageMethods.generateRandomString(7);
 
 describe(CommonPageData.testSuites.registroYAutenticacion, () =>{
     it('Registro de usuario válido', ()=> {
@@ -16,8 +19,8 @@ describe(CommonPageData.testSuites.registroYAutenticacion, () =>{
 
         Logger.stepNumber(3)
         Logger.step("Completar todos los campos obligatorios con informacion válida")
-        SignupMethods.insertUsername('Admin123456')
-        SignupMethods.insertPassword('Admin123456')
+        SignupMethods.insertUsername(user)
+        SignupMethods.insertPassword(password)
 
         Logger.stepNumber(4)
         Logger.step("Hacer clic en el boton Sign up")
