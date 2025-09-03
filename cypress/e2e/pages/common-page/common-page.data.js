@@ -6,7 +6,8 @@ export class CommonPageData {
 
     static get testSuites() {
         return {
-            registroYAutenticacion: "Registro y Autenticación",
+            registro: "Registro",
+            autenticacion: "Autenticación",
             catalogoYCompra: "Catalogo y Compra"
 
         }
