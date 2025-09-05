@@ -22,4 +22,8 @@ export class HomeMethods {
         HomeElements.product(productName).should('be.visible');
     }
 
+    static verifyHomePageIsShown() {
+        cy.url().should('include', 'index.html');
+    }
+
 }

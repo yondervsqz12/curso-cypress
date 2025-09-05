@@ -2,7 +2,7 @@ export class CartElements {
 
     static get buttons() {
         return {
-            get placeOrder() {
+            placeOrder() {
                 return cy.get('button[data-toggle="modal"]')
             }
         }

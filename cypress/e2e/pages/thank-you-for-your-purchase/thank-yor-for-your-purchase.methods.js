@@ -1,4 +1,5 @@
-import { ThankYouForYourPurchaseElements } from "./thank-you-for-yorr-purchase.elements";
+import { ThankYouForYourPurchaseElements } from "./thank-you-for-your-purchase.elements"
+
 
 export class ThankYouForYourPurchaseMethods {
     static cliclOnOkButton() {
