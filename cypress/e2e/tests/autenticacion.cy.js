@@ -27,6 +27,9 @@ describe(CommonPageData.testSuites.autenticacion, () =>{
         Logger.verification('Verificar que se muestre el mensaje "Login successful"')
         CommonPageMethods.verifySignedUser(LoginData.validCredentials.username)
 
+        Logger.postCondition('Log out')
+        CommonPageMethods.logout();
+
     });
 
     it('Inicio de sesion invalido', () => {
